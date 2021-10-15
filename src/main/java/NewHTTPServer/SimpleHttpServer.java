@@ -6,16 +6,18 @@ import java.net.InetSocketAddress;
 import Config.Config;
 import com.sun.net.httpserver.HttpServer;
 
+/**
+ * Simple HTTP Server which uploads file
+ *
+ */
 
 public class SimpleHttpServer{
 
-    /**
-     *
-     */
     //Server base directory
     private static String BASEDIR;
     //Server port
     private static int PORT;
+    //Server IP Address
     private static String IPADDRS;
     private HttpServer server;
 
@@ -30,16 +32,10 @@ public class SimpleHttpServer{
     }
 
 
-
-
-
-
-
     public static void main(String[] args) throws Exception {
         SimpleHttpServer server = new SimpleHttpServer();
         server.start();
     }
-
 
 
     public void start() throws IOException {
