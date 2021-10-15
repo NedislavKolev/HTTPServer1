@@ -17,7 +17,7 @@ public class newHTTPServerTest {
     private SimpleHttpServer server;
 
     @Before
-    public void setup() {
+    public void setup() throws IOException {
         server = new SimpleHttpServer();
     }
 

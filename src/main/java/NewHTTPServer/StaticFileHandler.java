@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.file.Files;
 
+import Config.Config;
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -23,7 +24,7 @@ public class StaticFileHandler implements HttpHandler {
     public void handle(HttpExchange ex) throws IOException {
 
         //File send via the HTTP Server
-        File path = new File("D:\\Java\\HTTPServer1\\src\\main\\java\\NewHTTPServer\\testfile.xml");
+        File path = new File(Config.getInstance().getFile_path());
 
         Headers h = ex.getResponseHeaders();
         // Could be more clever about the content type based on the filename here.
