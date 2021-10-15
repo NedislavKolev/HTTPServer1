@@ -15,12 +15,14 @@ public class StaticFileHandler implements HttpHandler {
     private final String baseDir;
 
     public StaticFileHandler(String baseDir) {
+
         this.baseDir = baseDir;
     }
 
     @Override
     public void handle(HttpExchange ex) throws IOException {
 
+        //File send via the HTTP Server
         File path = new File("D:\\Java\\HTTPServer1\\src\\main\\java\\NewHTTPServer\\testfile.xml");
 
         Headers h = ex.getResponseHeaders();

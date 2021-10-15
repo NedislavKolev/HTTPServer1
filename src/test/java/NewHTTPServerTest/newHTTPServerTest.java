@@ -31,10 +31,15 @@ public class newHTTPServerTest {
         server.start();
     }
 
+
+    /**
+     * This UNIT test is testing if the file is uploaded by the HTTP Server
+     * @throws IOException
+     */
     @Test
     public void testDownload() throws IOException {
         server.start();
-
+        //URL from HTTP Server
         URL url = new URL("http://localhost:9000/static/testfile.xml");
         BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
         in.lines().forEach(System.out::println);
