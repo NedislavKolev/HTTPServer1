@@ -4,6 +4,9 @@ import Config.Config;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import static org.junit.Assert.assertEquals;
 
@@ -106,5 +109,48 @@ public class newHTTPServerConfigTest {
         //Compares whether the paths are equal or not
         assertEquals(expected_dir, actual_dir);
         System.out.println("Test passed!\nPaths are equal");
+    }
+
+    /**
+     * This UNIT Test is testing if there is a file ready to be uploaded to HTTP Server
+     * @throws IOException
+     */
+
+    @Test
+    public void testFilePath() throws IOException {
+        /**
+         * @param
+         * @filepath_actual Path to file from config.properties
+         * @filepath_expected Expected path to file
+         */
+        Config config = new Config();
+
+        String filepath_actual = config.getFile_path();
+
+        String filepath_expected = "D:/Java/HTTPServer1/src/main/java/NewHTTPServer/testfile.xml" ;
+
+        Path path = Paths.get(filepath_actual);
+        //Method to test if file exists
+        boolean exists = Files.exists(path);
+        //Method to check if file does not exist
+        boolean notExists = Files.notExists(path);
+        //Method to check if file is directory
+        boolean isDir = Files.isDirectory(path);
+
+        if (isDir) {
+            System.out.println("File is a Directory");
+        }
+        else if (exists) {
+            System.out.println("File exists!!");
+        }
+        else if (notExists) {
+            System.out.println("File doesn't exist!!");
+        }
+        else {
+            System.out.println("Program doesn't have access to the file!!");
+        }
+        //Compares the two names
+        assertEquals(filepath_expected, filepath_actual);
+        System.out.println("There is a file with that name, ready for upload");
     }
 }

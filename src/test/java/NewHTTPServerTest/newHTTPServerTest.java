@@ -41,7 +41,9 @@ public class newHTTPServerTest {
         server.start();
         //URL from HTTP Server
         URL url = new URL("http://localhost:9000/static/testfile.xml");
+        //Reading the uploaded file
         BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+        //Printing the uploaded file
         in.lines().forEach(System.out::println);
         in.close();
     }
