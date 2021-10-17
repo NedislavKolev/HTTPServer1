@@ -28,7 +28,7 @@ public class StaticFileHandler implements HttpHandler {
 
         Headers h = ex.getResponseHeaders();
         // Could be more clever about the content type based on the filename here.
-        h.add("Content-Type", "application/xml");
+        h.add("Content-Type",Config.getInstance().getContent_type());
 
         OutputStream out = ex.getResponseBody();
 
