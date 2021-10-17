@@ -24,7 +24,7 @@ public class StaticFileHandler implements HttpHandler {
     public void handle(HttpExchange ex) throws IOException {
 
         //File send via the HTTP Server
-        File path = new File(Config.getInstance().getFile_path());
+        File path = new File(Config.getInstance().getFile_path()+Config.getInstance().getFile_name());
 
         Headers h = ex.getResponseHeaders();
         // Could be more clever about the content type based on the filename here.

@@ -14,6 +14,7 @@ public class Config {
     private final String base_dir;
     private final String ip_address;
     private final String file_path;
+    private final String file_name;
     private static Config instance = null;
 
     //Define the config.properties file path
@@ -38,6 +39,7 @@ public class Config {
         base_dir = new String(prop.getProperty("base_dir"));
         ip_address = new String(prop.getProperty("ip_address"));
         file_path = new String(prop.getProperty("file_path"));
+        file_name = new String(prop.getProperty("file_name"));
     }
     //Using Singleton method
     public static Config getInstance() throws IOException {
@@ -52,6 +54,7 @@ public class Config {
     public String getBase_dir(){return this.base_dir;}
     public String getIp_address(){return this.ip_address;}
     public String getFile_path(){return this.file_path;}
+    public String getFile_name(){return this.file_name;}
 
 }
 

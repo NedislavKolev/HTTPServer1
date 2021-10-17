@@ -125,9 +125,9 @@ public class newHTTPServerConfigTest {
          */
         Config config = new Config();
 
-        String filepath_actual = config.getFile_path();
+        String filepath_actual = config.getFile_path()+config.getFile_name();
 
-        String filepath_expected = "D:/Java/HTTPServer1/src/main/java/NewHTTPServer/testfile.xml" ;
+        String filepath_expected = "D:/Java/HTTPServer1/src/main/java/UploadFiles/testfile.xml" ;
 
         Path path = Paths.get(filepath_actual);
         //Method to test if file exists
